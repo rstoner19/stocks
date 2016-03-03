@@ -26,12 +26,14 @@
 
   Stocks.list = ['AAPL', 'VIAB', 'ANIK', 'IBM'];
 
-  Stocks.loadQuote = function(fn){
+  Stocks.loadQuote = function(ctx, next){
+    console.log('loadQuote running');
     return Stocks.list.forEach(function(symbol){
       Stocks.loadData(symbol).done(function(){
         Stocks.data = stockData.map(function(ele){
           return new Stocks(ele);
         });
+        next();
       });
     });
   };
@@ -43,6 +45,7 @@
 
   Stocks.toIndexPage = function(){
     console.log('running');
+    console.log(Stocks.data);
     Stocks.data.forEach(function(a){
       $('#stock-data').append(a.toHtml('#stock-data-template'));
     });
