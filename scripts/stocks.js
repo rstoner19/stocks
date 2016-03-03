@@ -5,7 +5,9 @@
   Stocks.data = [];
   function Stocks (ops){
     Object.keys(ops).forEach(function(e,index,keys){
-      this[e] = ops[e];
+      if(ops[e]!== null){
+        this[e] = ops[e];
+      }
     },this);
   }
 
@@ -24,11 +26,25 @@
 
   Stocks.list = ['AAPL', 'VIAB', 'ANIK', 'IBM'];
 
-  Stocks.load = function(){
+  Stocks.loadQuote = function(fn){
     return Stocks.list.forEach(function(symbol){
       Stocks.loadData(symbol).done(function(){
-        Stocks.data = new Stocks(stockData);
+        Stocks.data = stockData.map(function(ele){
+          return new Stocks(ele);
+        });
       });
+    });
+  };
+
+  Stocks.prototype.toHtml = function(id){
+    var template = Handlebars.compile($(id).text());
+    return template(this);
+  };
+
+  Stocks.toIndexPage = function(){
+    console.log('running');
+    Stocks.data.forEach(function(a){
+      $('#stock-data').append(a.toHtml('#stock-data-template'));
     });
   };
 

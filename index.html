@@ -5,9 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Stock Data</title>
 
+  <script id="stock-data-template" type="text/x-handlebars-template">
+    <p>{{symbol}}: {{LastTradePriceOnly}} </p>
+
+  </script>
   </head>
   <body>
     <main>
+      <section id="stock-data">
+      </section>
 
       <input type="text" id="symbol" />
       <div id='result'>No Price</div>
@@ -20,5 +26,6 @@
     <script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
 
     <script src="scripts/stocks.js"></script>
+    <script> Stocks.loadQuote(Stocks.toIndexPage); </script>
   </body>
 </html>
