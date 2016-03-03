@@ -1,7 +1,6 @@
 page('/',
   indexController.index,
-  Stocks.loadQuote(),
-  Stocks.toIndexPage()
+  Stocks.loadQuote(Stocks.toIndexPage)  
 );
 
 page('/about');

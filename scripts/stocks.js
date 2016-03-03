@@ -24,17 +24,15 @@
         });
   };
 
-  Stocks.list = ['AAPL', 'VIAB', 'ANIK', 'IBM'];
+  Stocks.list = ['AAPL,VIAB,ANIK,IBM'];
 
-  Stocks.loadQuote = function(ctx, next){
+  Stocks.loadQuote = function(fn){
     console.log('loadQuote running');
-    return Stocks.list.forEach(function(symbol){
-      Stocks.loadData(symbol).done(function(){
-        Stocks.data = stockData.map(function(ele){
-          return new Stocks(ele);
-        });
-        next();
+    Stocks.loadData(Stocks.list).done(function(){
+      Stocks.data = stockData[0].map(function(ele){
+        return new Stocks(ele);
       });
+      fn();
     });
   };
 
