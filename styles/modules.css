@@ -1,0 +1,17 @@
+.navbar {
+  background-color: rgb(72, 158, 59);
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+}
+
+.up {
+  background-color: #CCFFCC;
+}
+
+.down {
+  background-color: #FF9999;
+}

@@ -4,20 +4,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Stock Data</title>
+  <link rel="stylesheet" href="styles/base.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="styles/modules.css" media="screen" title="no title" charset="utf-8">
+
 
   <script id="stock-data-template" type="text/x-handlebars-template">
-    <p>{{symbol}}: {{LastTradePriceOnly}} </p>
+    <p>{{symbol}}: <b class="{{movement}}">{{Change}} </b> {{LastTradePriceOnly}} </p>
 
   </script>
   </head>
   <body>
     <header>
       <h1>SSD: Simple Stock Data</h1>
-      <nav>
-        <ul> 
+      <nav class="navbar">
+        <ul>
           <li> Links</li> |
           <li> To Go</li> |
-          <li> Here</li> |
+          <li> Here</li>
         </ul>
       </nav>
     </header>

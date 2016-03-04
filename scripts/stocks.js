@@ -38,6 +38,11 @@
 
   Stocks.prototype.toHtml = function(id){
     var template = Handlebars.compile($(id).text());
+    if(this.Change>0){
+      this.movement = 'up';
+    } else if (this.Change<0){
+      this.movement = 'down';
+    }
     return template(this);
   };
 
