@@ -24,7 +24,7 @@
         });
   };
 
-  Stocks.list = ['AAPL,VIAB,ANIK,IBM'];
+  Stocks.list = ['AAPL,VIAB,ANIK,IBM,GE'];
 
   Stocks.loadQuote = function(fn){
     console.log('loadQuote running');
@@ -47,10 +47,9 @@
   };
 
   Stocks.toIndexPage = function(){
-    console.log('running');
-    console.log(Stocks.data);
     Stocks.data.forEach(function(a){
       $('#stock-data').append(a.toHtml('#stock-data-template'));
+      $('#detailed-data').append(a.toHtml('#detailed-data-template'));
     });
   };
 

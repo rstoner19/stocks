@@ -9,8 +9,12 @@
 
 
   <script id="stock-data-template" type="text/x-handlebars-template">
-    <p>{{symbol}}: <b class="{{movement}}">{{Change}} </b> {{LastTradePriceOnly}} </p>
-
+    <p>{{symbol}}: <b class="{{movement}}">{{Change}} </b> ${{LastTradePriceOnly}} </p>
+  </script>
+  <script id="detailed-data-template" type="text/x-handlebars-template">
+    <h4 class="symbol">{{Name}} ({{symbol}})</h4>
+    <p><b class="{{movement}}">{{Change}} </b> ${{LastTradePriceOnly}} </p>
+    <p>P/E: {{PERatio}} Dividend Per Shere: {{DividendShare}} </p>
   </script>
   </head>
   <body>
@@ -25,8 +29,12 @@
       </nav>
     </header>
 
-    <main>
+    <aside>
       <section id="stock-data">
+      </section>
+    </aside>
+    <main>
+      <section id="detailed-data">
       </section>
 
       <input type="text" id="symbol" />
@@ -41,6 +49,7 @@
     <script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
 
     <script src="scripts/stocks.js"></script>
+    <script src="scripts/scroll.js"></script>
     <script src="scripts/indexController.js"></script>
     <script src="scripts/routes.js"></script>
   </body>
