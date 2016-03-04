@@ -1,0 +1,7 @@
+aside {
+  display: flex;
+}
+
+aside th {
+  font-size: .75em;
+}
