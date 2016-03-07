@@ -5,9 +5,17 @@ $('#new-symbol').on('submit', function(e){
   e.preventDefault();
   Stocks.userList.push($('.symbol-input').val().toUpperCase());
   Stocks.userList = Stocks.userList.filter(function(y,pos){
+<<<<<<< HEAD
     return Stocks.userList.indexOf(y) === pos;
   });
   Stocks.userList = Stocks.userList.sort();
+=======
+    console.log(y, pos);
+    return Stocks.userList.indexOf(y) === pos;
+  });
+  Stocks.userList = Stocks.userList.sort();
+  console.log(Stocks.userList);
+>>>>>>> master
   $('.symbol-input').val('');
 });
 

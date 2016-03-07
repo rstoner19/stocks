@@ -3,7 +3,6 @@
 
   indexController.index = function(ctx, next){
     $('#stock-data').show();
-    next();
   };
 
   module.indexController = indexController;

@@ -24,7 +24,10 @@
         });
   };
 
-  Stocks.list = ['AAPL,VIAB,ANIK,IBM'];
+  if(!Stocks.userList){
+    Stocks.userList = [];
+  }
+  Stocks.list = ['AAPL,VIAB,ANIK,IBM,GE'];
 
   Stocks.loadQuote = function(fn){
     console.log('loadQuote running');
@@ -38,14 +41,18 @@
 
   Stocks.prototype.toHtml = function(id){
     var template = Handlebars.compile($(id).text());
+    if(this.Change>0){
+      this.movement = 'up';
+    } else if (this.Change<0){
+      this.movement = 'down';
+    }
     return template(this);
   };
 
   Stocks.toIndexPage = function(){
-    console.log('running');
-    console.log(Stocks.data);
     Stocks.data.forEach(function(a){
       $('#stock-data').append(a.toHtml('#stock-data-template'));
+      $('#detailed-data').append(a.toHtml('#detailed-data-template'));
     });
   };
 
