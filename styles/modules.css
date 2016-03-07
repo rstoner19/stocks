@@ -1,0 +1,30 @@
+.navbar {
+  background-color: rgb(72, 158, 59);
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+}
+
+.up {
+  background-color: #CCFFCC;
+}
+
+.down {
+  background-color: #FF9999;
+}
+/*** Aside Items ***/
+.aside-price {
+  text-align: right;
+}
+
+aside table {
+  width: 100%;
+  padding-right: 10px;
+}
+
+aside th {
+  text-align: left;
+}

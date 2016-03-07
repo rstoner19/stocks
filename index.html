@@ -4,31 +4,57 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Stock Data</title>
+  <link rel="stylesheet" href="styles/base.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="styles/layout.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="styles/modules.css" media="screen" title="no title" charset="utf-8">
+  <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
 
   <script id="stock-data-template" type="text/x-handlebars-template">
-    <p>{{symbol}}: {{LastTradePriceOnly}} </p>
-
+    <tr>
+      <td>{{symbol}}:</td>
+      <td><b class="{{movement}}">{{Change}} </b></td>
+      <td class="aside-price">${{LastTradePriceOnly}}</td>
+    </tr>
+  </script>
+  <script id="detailed-data-template" type="text/x-handlebars-template">
+    <h3 class="symbol">{{Name}} ({{symbol}})</h3>
+    <p><b class="{{movement}}">{{Change}} </b> ${{LastTradePriceOnly}} </p>
+    <p>P/E: {{PERatio}} Dividend Per Shere: {{DividendShare}} </p>
   </script>
   </head>
   <body>
     <header>
-      <h1>SSD: Simple Stock Data</h1>
-      <nav>
-        <ul> 
+      <img src="img/logo.png">
+      <nav class="navbar">
+        <ul>
           <li> Links</li> |
           <li> To Go</li> |
-          <li> Here</li> |
+          <li> Here</li>
         </ul>
       </nav>
     </header>
 
+    <aside>
+
+        <table id="stock-data">
+          <tr>
+            <th>Symbol</th>
+            <th>Change</th>
+            <th class="aside-price">Cur. Price</th>
+          </tr>
+        </table>
+    </aside>
     <main>
-      <section id="stock-data">
+      <section id="detailed-data">
+      </section>
+      <section id="symbol-input">
+        <form id="new-symbol">
+          <input type="text" class="symbol-input" value="Enter Symbol">
+          <button type="submit">Add Stock</button>
+        </form>
       </section>
 
-      <input type="text" id="symbol" />
-      <div id='result'>No Price</div>
-      <button type="submit" onClick="getData();">Get Data</button>
     </main>
 
 
@@ -38,6 +64,8 @@
     <script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
 
     <script src="scripts/stocks.js"></script>
+    <script src="scripts/symbolInput.js"></script>
+    <script src="scripts/scroll.js"></script>
     <script src="scripts/indexController.js"></script>
     <script src="scripts/routes.js"></script>
   </body>

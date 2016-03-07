@@ -1,0 +1,29 @@
+body {
+  margin: 0px;
+  font-family: 'Lato', sans-serif;
+}
+
+header {
+  width: 100%;
+  text-align: center;
+}
+
+header img {
+  margin-top: 20px;
+  height: 70px;
+}
+
+aside {
+  width:25%;
+  float:left;
+  position: static;
+}
+
+main {
+  width: 75%;
+  float: right;
+}
+
+nav {
+
+}
