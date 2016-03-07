@@ -48,9 +48,13 @@
     <main>
       <section id="detailed-data">
       </section>
+      <section id="symbol-input">
+        <form id="new-symbol">
+          <input type="text" class="symbol-input" value="Enter Symbol">
+          <button type="submit">Add Stock</button>
+        </form>
+      </section>
 
-      <input type="text" id="new-symbol" value="Enter Symbol">
-      <button type="submit" onClick="getData();">Add Stock</button>
     </main>
 
 
@@ -60,6 +64,7 @@
     <script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
 
     <script src="scripts/stocks.js"></script>
+    <script src="scripts/symbolInput.js"></script>
     <script src="scripts/scroll.js"></script>
     <script src="scripts/indexController.js"></script>
     <script src="scripts/routes.js"></script>

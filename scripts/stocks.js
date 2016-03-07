@@ -24,6 +24,9 @@
         });
   };
 
+  if(!Stocks.userList){
+    Stocks.userList = [];
+  }
   Stocks.list = ['AAPL,VIAB,ANIK,IBM,GE'];
 
   Stocks.loadQuote = function(fn){
