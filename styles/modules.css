@@ -6,6 +6,8 @@
   display: flex;
   justify-content: space-around;
   list-style-type: none;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .up {
@@ -15,6 +17,8 @@
 .down {
   background-color: #FF9999;
 }
+
+
 /*** Aside Items ***/
 .aside-price {
   text-align: right;
@@ -24,6 +28,7 @@ aside table {
   width: 100%;
   padding-right: 10px;
 }
+
 /*** Input.html ***/
 #symbol-input {
   position: fixed;
