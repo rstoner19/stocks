@@ -6,6 +6,8 @@
   display: flex;
   justify-content: space-around;
   list-style-type: none;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .up {
@@ -15,6 +17,8 @@
 .down {
   background-color: #FF9999;
 }
+
+
 /*** Aside Items ***/
 .aside-price {
   text-align: right;
@@ -25,6 +29,35 @@ aside table {
   padding-right: 10px;
 }
 
-aside th {
-  text-align: left;
+/*** Input.html ***/
+#symbol-input {
+  position: fixed;
+  background-color: white;
+  width: 240px;
+  border: solid 2px black;
+  border-radius: 10px;
+  left: 50%;
+  top: 20%;
+  margin-left: -120px;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+}
+
+#symbol-input ul {
+  list-style-type: none;
+}
+
+#symbol-input a {
+  width: 20px;
+  align-self: flex-end;
+  margin: .5em 1em 0em 0em;
+}
+
+#symbol-input img {
+  width: 15px;
+}
+
+#symbol-input form {
+  align-self: center;
 }

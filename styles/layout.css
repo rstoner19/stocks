@@ -1,7 +1,14 @@
-aside {
-  display: flex;
-}
 
 aside th {
   font-size: .75em;
+  text-align: left;
+}
+
+aside a {
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-style: italic;
+  font-size: .75em;
+  width: 30px;
 }
