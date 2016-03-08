@@ -3,6 +3,7 @@ page('/',
   Stocks.loadQuote(Stocks.toIndexPage)
 );
 
-// page('/about');
+page('/input',
+inputController.index);
 
 page();

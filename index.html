@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="styles/modules.css" media="screen" title="no title" charset="utf-8">
   <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 
-
   <script id="stock-data-template" type="text/x-handlebars-template">
     <tr>
       <td>{{symbol}}:</td>
@@ -17,16 +16,16 @@
       <td class="aside-price">${{LastTradePriceOnly}}</td>
     </tr>
   </script>
+
   <script id="detailed-data-template" type="text/x-handlebars-template">
     <h3 class="symbol">{{Name}} ({{symbol}})</h3>
     <p><b class="{{movement}}">{{Change}} </b> ${{LastTradePriceOnly}} </p>
     <p>P/E: {{PERatio}} Dividend Per Shere: {{DividendShare}} </p>
   </script>
+
   </head>
   <body>
-    <header>
-      <h1>SSD: Simple Stock Data</h1>
-      <nav>
+    <header class="blur">
       <img src="img/logo.png">
       <nav class="navbar">
         <ul>
@@ -37,26 +36,28 @@
       </nav>
     </header>
 
-    <aside>
-
-        <table id="stock-data">
-          <tr>
-            <th>Symbol</th>
-            <th>Change</th>
-            <th class="aside-price">Cur. Price</th>
-          </tr>
-        </table>
+    <aside class="blur">
+      <a href='/input'>Edit </a>
+      <table id="stock-data">
+        <tr>
+          <th>Symbol</th>
+          <th>Change</th>
+          <th class="aside-price">Cur. Price</th>
+        </tr>
+      </table>
     </aside>
     <main>
-      <section id="stock-data">
-        <a href='/input'>Edit </a>
-      <section id="detailed-data">
-      </section>
+      <section id="detailed-data" class="blur">
+     </section>
+
       <section id="symbol-input">
+        <a href='/'><img src="img/close.png"></a>
         <form id="new-symbol">
           <input type="text" class="symbol-input" value="Enter Symbol">
           <button type="submit">Add Stock</button>
         </form>
+        <ul id="symbol-list">
+        </ul>
       </section>
 
     </main>
@@ -71,6 +72,7 @@
     <script src="scripts/symbolInput.js"></script>
     <script src="scripts/scroll.js"></script>
     <script src="scripts/indexController.js"></script>
+    <script src="scripts/inputController.js"></script>
     <script src="scripts/routes.js"></script>
   </body>
 </html>

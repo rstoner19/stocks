@@ -24,7 +24,35 @@ aside table {
   width: 100%;
   padding-right: 10px;
 }
+/*** Input.html ***/
+#symbol-input {
+  position: fixed;
+  background-color: white;
+  width: 240px;
+  border: solid 2px black;
+  border-radius: 10px;
+  left: 50%;
+  top: 20%;
+  margin-left: -120px;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+}
 
-aside th {
-  text-align: left;
+#symbol-input ul {
+  list-style-type: none;
+}
+
+#symbol-input a {
+  width: 20px;
+  align-self: flex-end;
+  margin: .5em 1em 0em 0em;
+}
+
+#symbol-input img {
+  width: 15px;
+}
+
+#symbol-input form {
+  align-self: center;
 }
