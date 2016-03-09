@@ -24,7 +24,6 @@
         });
   };
 
-
   Stocks.loadQuote = function(fn){
     Stocks.list = Stocks.userList.join(',');
     console.log('loadQuote running');
@@ -52,7 +51,6 @@
       $('#detailed-data').append(a.toHtml('#detailed-data-template'));
     });
   };
-
 
   module.Stocks = Stocks;
 })(window);
