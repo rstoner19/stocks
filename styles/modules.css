@@ -40,12 +40,15 @@ aside table {
   top: 20%;
   margin-left: -120px;
   z-index: 5;
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
 }
 
 #symbol-input ul {
+  display: flex;
+  flex-direction: column;
   list-style-type: none;
+  padding-left: 10px;
 }
 
 #symbol-input a {
@@ -54,7 +57,21 @@ aside table {
   margin: .5em 1em 0em 0em;
 }
 
-#symbol-input img {
+#symbol-input li {
+  margin-bottom: 2px;
+  width: 100%;
+}
+
+.remove-symbol {
+  display: inline;
+  float: right;
+}
+
+.remove-symbol:hover {
+  cursor: pointer; 
+}
+
+#close-page {
   width: 15px;
 }
 

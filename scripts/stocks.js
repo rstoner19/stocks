@@ -24,12 +24,8 @@
         });
   };
 
-  if(!Stocks.userList){
-    Stocks.userList = [];
-  }
-  Stocks.list = ['AAPL,VIAB,ANIK,IBM,GE'];
-
   Stocks.loadQuote = function(fn){
+    Stocks.list = Stocks.userList.join(',');
     console.log('loadQuote running');
     Stocks.loadData(Stocks.list).done(function(){
       Stocks.data = stockData[0].map(function(ele){
@@ -55,7 +51,6 @@
       $('#detailed-data').append(a.toHtml('#detailed-data-template'));
     });
   };
-
 
   module.Stocks = Stocks;
 })(window);
