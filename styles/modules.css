@@ -12,10 +12,13 @@
 
 .up {
   background-color: #CCFFCC;
+  border-radius: 4px;
 }
 
 .down {
   background-color: #FF9999;
+  border-radius: 4px;
+
 }
 
 
@@ -41,7 +44,9 @@ aside table {
   margin-left: -120px;
   z-index: 5;
   display: inline-flex;
-  flex-direction: column;
+  display:block;
+  overflow-y:scroll;
+  bottom: 10%;
 }
 
 #symbol-input ul {
@@ -68,11 +73,14 @@ aside table {
 }
 
 .remove-symbol:hover {
-  cursor: pointer; 
+  cursor: pointer;
 }
 
 #close-page {
   width: 15px;
+  float: right;
+  margin-top: 5px;
+  margin-right: 10px;
 }
 
 #symbol-input form {

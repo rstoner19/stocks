@@ -1,7 +1,5 @@
 page('/',
-  indexController.index,
-  Stocks.loadLocal(),
-  Stocks.loadQuote(Stocks.toIndexPage)
+  controller.homepage
 );
 
 page('/input',

@@ -2,7 +2,6 @@
   'use strict';
   var stockData = [];
 
-  Stocks.data = [];
   function Stocks (ops){
     Object.keys(ops).forEach(function(e,index,keys){
       if(ops[e]!== null){
@@ -12,6 +11,7 @@
   }
 
   Stocks.loadData = function(symbol) {
+    stockData = [];
     var url = 'https://query.yahooapis.com/v1/public/yql';
     var data = encodeURIComponent('select * from yahoo.finance.quotes where symbol in ("' + symbol + '")');
     return $.getJSON(url, 'q=' + data + '&format=json&diagnostics=true&env=http://datatables.org/alltables.env')
