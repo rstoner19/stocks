@@ -32,6 +32,10 @@ aside table {
   padding-right: 10px;
 }
 
+aside a {
+  font-size: 1em;
+}
+
 /*** Input.html ***/
 #symbol-input {
   position: fixed;
