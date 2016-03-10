@@ -18,7 +18,11 @@
   </script>
 
   <script id="detailed-data-template" type="text/x-handlebars-template">
-    <h3 class="symbol">{{Name}} ({{symbol}})</h3>
+    {{#if Name}}
+      <h3 class="symbol">{{Name}} ({{symbol}}) ${{LastTradePriceOnly}} <b class="{{movement}}">{{Change}} </b></h3>
+    {{else}}
+      <h3 class="symbol"> Unknown Stock, Please check {{symbol}} is right</h3>
+    {{/if}}
     <p><b class="{{movement}}">{{Change}} </b> ${{LastTradePriceOnly}} </p>
     <p>P/E: {{PERatio}} Dividend Per Share: {{DividendShare}} </p>
   </script>
