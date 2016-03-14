@@ -24,12 +24,16 @@
 
 /*** Aside Items ***/
 .aside-price {
-  text-align: right;
+  text-align: left;
 }
 
 aside table {
   width: 100%;
   padding-right: 10px;
+}
+
+aside td {
+  width: 33%;
 }
 
 aside a {

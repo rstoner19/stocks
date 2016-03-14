@@ -37,6 +37,10 @@
 
   Stocks.prototype.toHtml = function(id){
     var template = Handlebars.compile($(id).text());
+    if(this.LastTradePriceOnly){
+      this.LastTradePriceOnly = Number(this.LastTradePriceOnly).toFixed(2);
+      this.Change = Number(this.Change).toFixed(2);
+    }
     if(this.Change>0){
       this.movement = 'up';
     } else if (this.Change<0){
