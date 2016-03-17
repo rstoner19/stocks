@@ -20,11 +20,26 @@
   <script id="detailed-data-template" type="text/x-handlebars-template">
     {{#if Name}}
       <h3 class="symbol">{{Name}} ({{symbol}}) </h3>
-      <h4>${{LastTradePriceOnly}} <b class="{{movement}}"> {{Change}} </b></h4>
+      <h4>${{LastTradePriceOnly}} <b class="{{movement}}"> {{Change}} </b> <b class="{{movement}}">  {{ChangeinPercent}}</b></h4>
     {{else}}
       <h3 class="symbol"> Unknown Stock. Please check the symbol again.</h3>
     {{/if}}
-    <p>P/E: {{PERatio}} Dividend Per Share: {{DividendShare}} </p>
+    <table>
+      <tr>
+        <th> Dividends: </th>
+        <td>Div/Shr: ${{DividendShare}}</td>
+        <td>Div Yield: {{DividendYield}}</td>
+        <td>Pay Date: {{DividendPayDate}} </td>
+      </tr>
+      <tr>
+        <th>Earnings:</th>
+        <td>EPS: ${{EarningsShare}}</td>
+        <td>P/E: {{PERatio}}</td>
+      </tr>
+    </table>
+  </script>
+
+  <script id="stock-data-table-template" type="text/x-handlebars-template">
   </script>
 
   </head>
@@ -42,6 +57,13 @@
 
     <aside class="blur">
       <a href="/input">Edit </a>
+      <table>
+        <tr>
+          <th>Symbol</th>
+          <th>Change</th>
+          <th class="aside-price">Cur. Price</th>
+        </tr>
+      </table>
       <table id="stock-data">
         <tr>
           <th>Symbol</th>

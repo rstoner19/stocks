@@ -10,17 +10,29 @@
   margin-bottom: 0px;
 }
 
+/*** Detailed Data Items ***/
 .up {
   background-color: #CCFFCC;
   border-radius: 4px;
+  margin-left: 3px;
+  margin-right: 5px;
 }
 
 .down {
   background-color: #FF9999;
   border-radius: 4px;
-
+  margin-left: 3px;
 }
 
+#detailed-data table {
+  margin-top: 0px;
+  text-align: left;
+  width: 100%;
+}
+
+#detailed-data td th {
+  width: 15%;
+}
 
 /*** Aside Items ***/
 .aside-price {
@@ -51,8 +63,7 @@ aside a {
   top: 20%;
   margin-left: -120px;
   z-index: 5;
-  display: inline-flex;
-  display:block;
+  display: block;
   overflow-y:scroll;
   bottom: 10%;
 }
@@ -92,5 +103,7 @@ aside a {
 }
 
 #symbol-input form {
-  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
