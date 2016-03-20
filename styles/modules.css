@@ -36,7 +36,14 @@
 }
 
 #detailed-data td th {
-  width: 15%;
+}
+
+.data-description {
+  font-style: italic;
+}
+
+.specific-data {
+  font-weight: bold;
 }
 
 /*** Aside Items ***/

@@ -26,22 +26,40 @@
     {{/if}}
     <table>
       <tr>
+        <th> Details </th>
+        <td class="data-description"> Mkt. Cap</td>
+        <td class="specific-data">${{MarketCapitalization}}</td>
+        <td class="data-description">Last Trade </td>
+        <td class="specific-data">{{LastTradeTime}} EST</td>
+        <td class="data-description">EBITDA </td>
+        <td class="specific-data">{{EBITDA}}</td>
+      </tr>
+      <tr>
         <th> Dividends: </th>
-        <td>Div/Shr: ${{DividendShare}}</td>
-        <td>Div Yield: {{DividendYield}}</td>
-        <td>Pay Date: {{DividendPayDate}} </td>
+        <td class="data-description">Div/Shr: </td>
+        <td class="specific-data">${{DividendShare}}</td>
+        <td class="data-description">Div Yield: </td>
+        <td class="specific-data">{{DividendYield}}</td>
+        <td class="data-description">Pay Date: </td>
+        <td class="specific-data">{{DividendPayDate}}</td>
       </tr>
       <tr>
         <th>Earnings:</th>
-        <td>EPS: ${{EarningsShare}}</td>
-        <td>P/E: {{PERatio}}</td>
-        <td>Next Qtr Est: {{EPSEstimateNextQuarter}} </td>
+        <td class="data-description">EPS: </td>
+        <td class="specific-data">${{EarningsShare}}</td>
+        <td class="data-description">P/E: </td>
+        <td class="specific-data">{{PERatio}}</td>
+        <td class="data-description">Next Qtr Est: </td>
+        <td class="specific-data">{{EPSEstimateNextQuarter}}</td>
       </tr>
       <tr>
         <th>Movement: </th>
-        <td>Day Rng: {{DaysRange}}
-        <td>52-Wk Rng: {{YearRange}} </td>
-        <td>% Chg From Low: {{PercentChangeFromYearLow}} </td>
+        <td class="data-description">Day Rng: </td>
+        <td class="specific-data">${{DaysRange}}</td>
+        <td class="data-description">52-Wk Rng: </td>
+        <td class="specific-data">${{YearRange}}</td>
+        <td class="data-description">% Chg From Low: </td>
+        <td class="specific-data">{{PercentChangeFromYearLow}}</td>
       </tr>
     </table>
   </script>
@@ -56,8 +74,8 @@
       <nav class="navbar">
         <ul>
           <li> Links</li> |
-          <li> To Go</li> |
-          <li> Here</li>
+          <li> Sort By</li> |
+          <li> Quick Quote (to come)</li>
         </ul>
       </nav>
     </header>
