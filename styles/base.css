@@ -22,8 +22,10 @@ aside {
 }
 
 main {
+  position: relative;
   width: 75%;
   float: right;
+  z-index: -1;
 }
 
 nav {

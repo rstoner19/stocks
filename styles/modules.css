@@ -1,3 +1,4 @@
+/*** Nav Bar ***/
 .navbar {
   background-color: rgb(72, 158, 59);
 }
@@ -6,8 +7,32 @@
   display: flex;
   justify-content: space-around;
   list-style-type: none;
-  margin-top: 0px;
-  margin-bottom: 0px;
+}
+
+#sort-dropdown {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+#sort-dropdown ul {
+  display: none;
+  position: absolute;
+  height: auto;
+  background-color: gray;
+  list-style: none;
+  padding-left: 0;
+  width: 170px;
+  text-align: left;
+  z-index: 2;
+}
+
+#sort-dropdown:hover ul{
+  display: block;
+}
+
+#sort-dropdown li:hover {
+  color: darkgray;
 }
 
 /*** Detailed Data Items ***/
@@ -33,9 +58,6 @@
   text-align: left;
   width: 99%;
   box-shadow: 1px 0px 5px black;
-}
-
-#detailed-data td th {
 }
 
 .data-description {
