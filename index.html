@@ -19,12 +19,52 @@
 
   <script id="detailed-data-template" type="text/x-handlebars-template">
     {{#if Name}}
-      <h3 class="symbol">{{Name}} ({{symbol}}) ${{LastTradePriceOnly}} <b class="{{movement}}">{{Change}} </b></h3>
+      <h3 class="symbol">{{Name}} ({{symbol}}) </h3>
+      <h4>${{LastTradePriceOnly}} <b class="{{movement}}"> {{Change}} </b> <b class="{{movement}}">  {{ChangeinPercent}}</b></h4>
     {{else}}
-      <h3 class="symbol"> Unknown Stock, Please check {{symbol}} is right</h3>
+      <h3 class="symbol"> Unknown Stock. Please check the symbol again.</h3>
     {{/if}}
-    <p><b class="{{movement}}">{{Change}} </b> ${{LastTradePriceOnly}} </p>
-    <p>P/E: {{PERatio}} Dividend Per Share: {{DividendShare}} </p>
+    <table>
+      <tr>
+        <th> Details </th>
+        <td class="data-description"> Mkt. Cap</td>
+        <td class="specific-data">${{MarketCapitalization}}</td>
+        <td class="data-description">Last Trade </td>
+        <td class="specific-data">{{LastTradeTime}} EST</td>
+        <td class="data-description">EBITDA </td>
+        <td class="specific-data">{{EBITDA}}</td>
+      </tr>
+      <tr>
+        <th> Dividends: </th>
+        <td class="data-description">Div/Shr: </td>
+        <td class="specific-data">${{DividendShare}}</td>
+        <td class="data-description">Div Yield: </td>
+        <td class="specific-data">{{DividendYield}}</td>
+        <td class="data-description">Pay Date: </td>
+        <td class="specific-data">{{DividendPayDate}}</td>
+      </tr>
+      <tr>
+        <th>Earnings:</th>
+        <td class="data-description">EPS: </td>
+        <td class="specific-data">${{EarningsShare}}</td>
+        <td class="data-description">P/E: </td>
+        <td class="specific-data">{{PERatio}}</td>
+        <td class="data-description">Next Qtr Est: </td>
+        <td class="specific-data">{{EPSEstimateNextQuarter}}</td>
+      </tr>
+      <tr>
+        <th>Movement: </th>
+        <td class="data-description">Day Rng: </td>
+        <td class="specific-data">${{DaysRange}}</td>
+        <td class="data-description">52-Wk Rng: </td>
+        <td class="specific-data">${{YearRange}}</td>
+        <td class="data-description">% Chg From Low: </td>
+        <td class="specific-data">{{PercentChangeFromYearLow}}</td>
+      </tr>
+    </table>
+  </script>
+
+  <script id="stock-data-table-template" type="text/x-handlebars-template">
   </script>
 
   </head>
@@ -34,14 +74,21 @@
       <nav class="navbar">
         <ul>
           <li> Links</li> |
-          <li> To Go</li> |
-          <li> Here</li>
+          <li> Sort By</li> |
+          <li> Quick Quote (to come)</li>
         </ul>
       </nav>
     </header>
 
     <aside class="blur">
       <a href="/input">Edit </a>
+      <table>
+        <tr>
+          <th>Symbol</th>
+          <th>Change</th>
+          <th class="aside-price">Cur. Price</th>
+        </tr>
+      </table>
       <table id="stock-data">
         <tr>
           <th>Symbol</th>
