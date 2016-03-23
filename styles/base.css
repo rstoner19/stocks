@@ -15,8 +15,8 @@ header img {
 
 aside {
   width:24%;
-  float:left;
   position: static;
+  float:left;
   display: flex;
   flex-direction: column;
 }

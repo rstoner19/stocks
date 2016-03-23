@@ -56,5 +56,23 @@
     });
   };
 
+  Stocks.sortBy = function(sortBy){
+    Stocks.data = Stocks.data.sort(function(a,b){
+      if(sortBy === 'percent-change'){
+        return (parseFloat(b.PercentChange) - parseFloat(a.PercentChange));
+      } else if (sortBy === 'biggest-movers'){
+        console.log(Math.abs(parseFloat(b.PercentChange)))
+        return (Math.abs(parseFloat(b.PercentChange)) - Math.abs(parseFloat(a.PercentChange)));
+      }
+    });
+    $('#stock-data').empty();
+    $('#detailed-data').empty();
+    Stocks.toIndexPage();
+  };
+
+  $('.sort-options').on('click',function(){
+    Stocks.sortBy(this.id);
+  });
+
   module.Stocks = Stocks;
 })(window);
