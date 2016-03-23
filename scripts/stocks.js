@@ -76,6 +76,10 @@
           b.temp = 100000;
         } else {b.temp = parseFloat(b.PERatio);}
         return (a.temp - b.temp);
+      } else {
+        if (a.symbol < b.symbol){
+          return -1;
+        };
       }
     });
     $('#stock-data').empty();
