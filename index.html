@@ -73,8 +73,18 @@
       <img src="img/logo.png">
       <nav class="navbar">
         <ul>
-          <li> Links</li> |
-          <li> Sort By</li> |
+          <li>Links</li> |
+          <div>
+          <li id="sort-dropdown"> Sort By
+            <ul>
+              <li class="sort-options"> Default (Alphabetical) </li>
+              <li class="sort-options" id="percent-change"> Percent Change </li>
+              <li class="sort-options" id="biggest-movers"> Biggest Movers </li>
+              <li class="sort-options" id="div-yield"> Dividend Yield </li>
+              <li class="sort-options" id="price-earnings"> P/E Ratio </li>
+            </ul>
+          </li>
+        </div> |
           <li> Quick Quote (to come)</li>
         </ul>
       </nav>
@@ -121,7 +131,7 @@
 
     <script src="scripts/stocks.js"></script>
     <script src="scripts/symbolInput.js"></script>
-    <script src="scripts/scroll.js"></script>
+    <!-- <script src="scripts/scroll.js"></script> -->
     <script src="scripts/indexController.js"></script>
     <script src="scripts/inputController.js"></script>
     <script src="scripts/routes.js"></script>

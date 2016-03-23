@@ -1,12 +1,11 @@
 (function(module){
   'use strict';
   var stockData = [];
+  Stocks.data = [];
 
   function Stocks (ops){
     Object.keys(ops).forEach(function(e,index,keys){
-      if(ops[e]!== null){
-        this[e] = ops[e];
-      }
+      this[e] = ops[e];
     },this);
   }
 
@@ -55,6 +54,42 @@
       $('#detailed-data').append(a.toHtml('#detailed-data-template'));
     });
   };
+
+  Stocks.sortBy = function(sortBy){
+    Stocks.data = Stocks.data.sort(function(a,b){
+      if(sortBy === 'percent-change'){
+        return (parseFloat(b.PercentChange) - parseFloat(a.PercentChange));
+      } else if (sortBy === 'biggest-movers'){
+        return (Math.abs(parseFloat(b.PercentChange)) - Math.abs(parseFloat(a.PercentChange)));
+      } else if (sortBy === 'div-yield') {
+        if(!a.DividendYield) {
+          a.DividendYield = '0.00';
+        } else if (!b.DividendYield) {
+          b.DividendYield = '0.00';
+        }
+        return (parseFloat(b.DividendYield) - parseFloat(a.DividendYield));
+      } else if (sortBy ==='price-earnings') {
+        if(!a.PERatio){
+          a.temp = 100000;
+        } else {a.temp = parseFloat(a.PERatio);}
+        if(!b.PERatio){
+          b.temp = 100000;
+        } else {b.temp = parseFloat(b.PERatio);}
+        return (a.temp - b.temp);
+      } else {
+        if (a.symbol < b.symbol){
+          return -1;
+        };
+      }
+    });
+    $('#stock-data').empty();
+    $('#detailed-data').empty();
+    Stocks.toIndexPage();
+  };
+
+  $('.sort-options').on('click',function(){
+    Stocks.sortBy(this.id);
+  });
 
   module.Stocks = Stocks;
 })(window);
