@@ -11,7 +11,7 @@
 
   <script id="stock-data-template" type="text/x-handlebars-template">
     <tr>
-      <td>{{symbol}}:</td>
+      <th id="aside-symbol">{{symbol}}:</th>
       <td><b class="{{movement}}">{{Change}} </b></td>
       <td class="aside-price">${{LastTradePriceOnly}}</td>
     </tr>
@@ -24,15 +24,15 @@
     {{else}}
       <h3 class="symbol"> Unknown Stock. Please check the symbol again.</h3>
     {{/if}}
-    <table>
+    <table id="main-table">
       <tr>
         <th> Details </th>
         <td class="data-description"> Mkt. Cap</td>
         <td class="specific-data">${{MarketCapitalization}}</td>
         <td class="data-description">Last Trade </td>
         <td class="specific-data">{{LastTradeTime}} EST</td>
-        <td class="data-description">EBITDA </td>
-        <td class="specific-data">{{EBITDA}}</td>
+        <td id="main-table-last" class="data-description">EBITDA </td>
+        <td id="main-table-last" class="specific-data">{{EBITDA}}</td>
       </tr>
       <tr>
         <th> Dividends: </th>
@@ -40,8 +40,8 @@
         <td class="specific-data">${{DividendShare}}</td>
         <td class="data-description">Div Yield: </td>
         <td class="specific-data">{{DividendYield}}</td>
-        <td class="data-description">Pay Date: </td>
-        <td class="specific-data">{{DividendPayDate}}</td>
+        <td id="main-table-last" class="data-description">Pay Date: </td>
+        <td id="main-table-last" class="specific-data">{{DividendPayDate}}</td>
       </tr>
       <tr>
         <th>Earnings:</th>
@@ -49,8 +49,8 @@
         <td class="specific-data">${{EarningsShare}}</td>
         <td class="data-description">P/E: </td>
         <td class="specific-data">{{PERatio}}</td>
-        <td class="data-description">Next Qtr Est: </td>
-        <td class="specific-data">{{EPSEstimateNextQuarter}}</td>
+        <td id="main-table-last" class="data-description">Next Qtr Est: </td>
+        <td id="main-table-last" class="specific-data">{{EPSEstimateNextQuarter}}</td>
       </tr>
       <tr>
         <th>Movement: </th>
@@ -58,8 +58,8 @@
         <td class="specific-data">${{DaysRange}}</td>
         <td class="data-description">52-Wk Rng: </td>
         <td class="specific-data">${{YearRange}}</td>
-        <td class="data-description">% Chg From Low: </td>
-        <td class="specific-data">{{PercentChangeFromYearLow}}</td>
+        <td id="main-table-last" class="data-description">% Chg From Low: </td>
+        <td id="main-table-last" class="specific-data">{{PercentChangeFromYearLow}}</td>
       </tr>
     </table>
   </script>
@@ -94,7 +94,7 @@
       <a href="/input">Edit </a>
       <table>
         <tr>
-          <th>Symbol</th>
+          <th id="aside-symbol">Symbol</th>
           <th>Change</th>
           <th class="aside-price">Cur. Price</th>
         </tr>
@@ -131,7 +131,6 @@
 
     <script src="scripts/stocks.js"></script>
     <script src="scripts/symbolInput.js"></script>
-    <!-- <script src="scripts/scroll.js"></script> -->
     <script src="scripts/indexController.js"></script>
     <script src="scripts/inputController.js"></script>
     <script src="scripts/routes.js"></script>

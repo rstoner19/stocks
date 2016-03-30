@@ -141,3 +141,16 @@ aside a {
   flex-direction: column;
   align-items: center;
 }
+
+/*** Responsive ***/
+@media only screen and (max-width: 1000px) {
+  #main-table th {
+    display:none;
+  }
+}
+
+@media only screen and (max-width: 880px) {
+  #main-table-last {
+    display:none;
+  }
+}
