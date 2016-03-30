@@ -12,8 +12,20 @@
   <script id="stock-data-template" type="text/x-handlebars-template">
     <tr>
       <th id="aside-symbol">{{symbol}}:</th>
-      <td><b class="{{movement}}">{{Change}} </b></td>
       <td class="aside-price">${{LastTradePriceOnly}}</td>
+      <td><b class="{{movement}}">{{Change}} </b></td>
+      <td id="aside-mobile"><b class="{{movement}}">{{ChangeinPercent}} </b></td>
+      {{#if DividendShare}}
+        <td id="aside-mobile">{{DividendShare}}</td>
+      {{else}}
+        <td id="aside-mobile" class="no-data"> - </td>
+      {{/if}}
+      <td id="aside-mobile">{{DividendYield}}</td>
+      {{#if PERatio}}
+        <td id="aside-mobile">{{PERatio}}</td>
+      {{else}}
+        <td id="aside-mobile" class="no-data"> - </td>
+      {{/if}}
     </tr>
   </script>
 
@@ -95,8 +107,12 @@
       <table>
         <tr>
           <th id="aside-symbol">Symbol</th>
-          <th>Change</th>
           <th class="aside-price">Cur. Price</th>
+          <th>Change</th>
+          <th id="aside-mobile">Percent</th>
+          <th id="aside-mobile">Dividend</th>
+          <th id="aside-mobile">Yield</th>
+          <th id="aside-mobile">P/E </th>
         </tr>
       </table>
       <table id="stock-data">

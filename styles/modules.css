@@ -86,6 +86,10 @@ aside a {
   font-size: 1em;
 }
 
+#aside-mobile {
+  display: none;
+}
+
 /*** Input.html ***/
 #symbol-input {
   position: fixed;
@@ -154,3 +158,45 @@ aside a {
     display:none;
   }
 }
+
+@media only screen and (max-width: 685px) {
+  /*** Aside ***/
+  aside table {
+    margin: auto;
+    width: 95%;
+  }
+  #aside-symbol {
+    text-align: left;
+  }
+  #main-table-last {
+    display: table;
+  }
+  #aside-mobile {
+    display: table-cell;
+  }
+  #aside-price {
+    text-align: center;
+  }
+  aside th {
+    width: 12%;
+  }
+  aside td {
+    width: 12%;
+  }
+  .no-data {
+    padding-left: 3%;
+  }
+
+  body {
+    position: relative;
+    z-index: -3;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  #aside-mobile {
+    display: none;
+  }
+  #main-table-last {
+    display: none;
+  }
