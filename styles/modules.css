@@ -68,7 +68,17 @@
   font-weight: bold;
 }
 
+.to-the-top {
+  font-style: italic;
+  font-size: .75em;
+  margin-top: 3px;
+  color: gray;
+}
+
 /*** Aside Items ***/
+.aside-symbol {
+  cursor: pointer;
+}
 .aside-price {
   text-align: left;
 }
@@ -84,6 +94,10 @@ aside td {
 
 aside a {
   font-size: 1em;
+}
+
+#aside-mobile {
+  display: none;
 }
 
 /*** Input.html ***/
@@ -141,3 +155,58 @@ aside a {
   flex-direction: column;
   align-items: center;
 }
+
+/*** Responsive ***/
+@media only screen and (max-width: 1000px) {
+  #main-table th {
+    display:none;
+  }
+}
+
+@media only screen and (max-width: 880px) {
+  #main-table-last {
+    display:none;
+  }
+}
+
+@media only screen and (max-width: 685px) {
+  /*** Aside ***/
+  aside table {
+    margin: auto;
+    width: 95%;
+  }
+  .aside-symbol {
+    text-align: left;
+  }
+  #main-table-last {
+    display: table;
+  }
+  #aside-mobile {
+    display: table-cell;
+  }
+  #aside-price {
+    text-align: center;
+  }
+  aside th {
+    width: 12%;
+  }
+  aside td {
+    width: 12%;
+  }
+  .no-data {
+    padding-left: 3%;
+  }
+
+  body {
+    position: relative;
+    z-index: -3;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  #aside-mobile {
+    display: none;
+  }
+  #main-table-last {
+    display: none;
+  }

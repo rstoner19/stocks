@@ -11,28 +11,40 @@
 
   <script id="stock-data-template" type="text/x-handlebars-template">
     <tr>
-      <td>{{symbol}}:</td>
-      <td><b class="{{movement}}">{{Change}} </b></td>
+      <th class="aside-symbol"> {{symbol}} </th>
       <td class="aside-price">${{LastTradePriceOnly}}</td>
+      <td><b class="{{movement}}">{{Change}} </b></td>
+      <td id="aside-mobile"><b class="{{movement}}">{{ChangeinPercent}} </b></td>
+      {{#if DividendShare}}
+        <td id="aside-mobile">{{DividendShare}}</td>
+      {{else}}
+        <td id="aside-mobile" class="no-data"> - </td>
+      {{/if}}
+      <td id="aside-mobile">{{DividendYield}}</td>
+      {{#if PERatio}}
+        <td id="aside-mobile">{{PERatio}}</td>
+      {{else}}
+        <td id="aside-mobile" class="no-data"> - </td>
+      {{/if}}
     </tr>
   </script>
 
   <script id="detailed-data-template" type="text/x-handlebars-template">
     {{#if Name}}
-      <h3 class="symbol">{{Name}} ({{symbol}}) </h3>
+      <h3 class="symbol" id="{{symbol}}"> {{Name}} ({{symbol}}) </h3>
       <h4>${{LastTradePriceOnly}} <b class="{{movement}}"> {{Change}} </b> <b class="{{movement}}">  {{ChangeinPercent}}</b></h4>
     {{else}}
       <h3 class="symbol"> Unknown Stock. Please check the symbol again.</h3>
     {{/if}}
-    <table>
+    <table id="main-table">
       <tr>
         <th> Details </th>
         <td class="data-description"> Mkt. Cap</td>
         <td class="specific-data">${{MarketCapitalization}}</td>
         <td class="data-description">Last Trade </td>
         <td class="specific-data">{{LastTradeTime}} EST</td>
-        <td class="data-description">EBITDA </td>
-        <td class="specific-data">{{EBITDA}}</td>
+        <td id="main-table-last" class="data-description">EBITDA </td>
+        <td id="main-table-last" class="specific-data">{{EBITDA}}</td>
       </tr>
       <tr>
         <th> Dividends: </th>
@@ -40,8 +52,8 @@
         <td class="specific-data">${{DividendShare}}</td>
         <td class="data-description">Div Yield: </td>
         <td class="specific-data">{{DividendYield}}</td>
-        <td class="data-description">Pay Date: </td>
-        <td class="specific-data">{{DividendPayDate}}</td>
+        <td id="main-table-last" class="data-description">Pay Date: </td>
+        <td id="main-table-last" class="specific-data">{{DividendPayDate}}</td>
       </tr>
       <tr>
         <th>Earnings:</th>
@@ -49,8 +61,8 @@
         <td class="specific-data">${{EarningsShare}}</td>
         <td class="data-description">P/E: </td>
         <td class="specific-data">{{PERatio}}</td>
-        <td class="data-description">Next Qtr Est: </td>
-        <td class="specific-data">{{EPSEstimateNextQuarter}}</td>
+        <td id="main-table-last" class="data-description">Next Qtr Est: </td>
+        <td id="main-table-last" class="specific-data">{{EPSEstimateNextQuarter}}</td>
       </tr>
       <tr>
         <th>Movement: </th>
@@ -58,10 +70,11 @@
         <td class="specific-data">${{DaysRange}}</td>
         <td class="data-description">52-Wk Rng: </td>
         <td class="specific-data">${{YearRange}}</td>
-        <td class="data-description">% Chg From Low: </td>
-        <td class="specific-data">{{PercentChangeFromYearLow}}</td>
+        <td id="main-table-last" class="data-description">% Chg From Low: </td>
+        <td id="main-table-last" class="specific-data">{{PercentChangeFromYearLow}}</td>
       </tr>
     </table>
+    <p class="to-the-top"> To Top of Page </p>
   </script>
 
   <script id="stock-data-table-template" type="text/x-handlebars-template">
@@ -92,11 +105,15 @@
 
     <aside class="blur">
       <a href="/input">Edit </a>
-      <table>
+      <table id="testing">
         <tr>
-          <th>Symbol</th>
-          <th>Change</th>
+          <th class="aside-symbol">Symbol</th>
           <th class="aside-price">Cur. Price</th>
+          <th>Change</th>
+          <th id="aside-mobile">Percent</th>
+          <th id="aside-mobile">Dividend</th>
+          <th id="aside-mobile">Yield</th>
+          <th id="aside-mobile">P/E </th>
         </tr>
       </table>
       <table id="stock-data">
@@ -131,7 +148,6 @@
 
     <script src="scripts/stocks.js"></script>
     <script src="scripts/symbolInput.js"></script>
-    <!-- <script src="scripts/scroll.js"></script> -->
     <script src="scripts/indexController.js"></script>
     <script src="scripts/inputController.js"></script>
     <script src="scripts/routes.js"></script>

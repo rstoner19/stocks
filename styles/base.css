@@ -28,6 +28,19 @@ main {
   z-index: -1;
 }
 
-nav {
+/*** Responsive ***/
+@media only screen and (max-width: 685px) {
+  aside {
+    position: relative;
+    width: 100%;
+    float: none;
+    z-index: -1;
+  }
+  main {
+    width: 98%
+  }
+  #symbol-input{
+    z-index: 5;
+  }
 
 }
