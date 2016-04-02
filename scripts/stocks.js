@@ -53,7 +53,17 @@
       $('#stock-data').append(a.toHtml('#stock-data-template'));
       $('#detailed-data').append(a.toHtml('#detailed-data-template'));
     });
+    navigateHelp();
   };
+
+  function navigateHelp () {
+    $('.aside-symbol').on('click',function(){
+      $('html, body').animate({ scrollTop: $('#' + this.innerText).offset().top});
+    });
+    $('.to-the-top').on('click',function(){
+      $('body').scrollTop(0);
+    });
+  }
 
   Stocks.sortBy = function(sortBy){
     Stocks.data = Stocks.data.sort(function(a,b){
@@ -90,6 +100,7 @@
   $('.sort-options').on('click',function(){
     Stocks.sortBy(this.id);
   });
+
 
   module.Stocks = Stocks;
 })(window);

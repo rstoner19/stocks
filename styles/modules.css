@@ -68,7 +68,17 @@
   font-weight: bold;
 }
 
+.to-the-top {
+  font-style: italic;
+  font-size: .75em;
+  margin-top: 3px;
+  color: gray;
+}
+
 /*** Aside Items ***/
+.aside-symbol {
+  cursor: pointer;
+}
 .aside-price {
   text-align: left;
 }
@@ -165,7 +175,7 @@ aside a {
     margin: auto;
     width: 95%;
   }
-  #aside-symbol {
+  .aside-symbol {
     text-align: left;
   }
   #main-table-last {

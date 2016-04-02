@@ -11,7 +11,7 @@
 
   <script id="stock-data-template" type="text/x-handlebars-template">
     <tr>
-      <th id="aside-symbol">{{symbol}}:</th>
+      <th class="aside-symbol"> {{symbol}} </th>
       <td class="aside-price">${{LastTradePriceOnly}}</td>
       <td><b class="{{movement}}">{{Change}} </b></td>
       <td id="aside-mobile"><b class="{{movement}}">{{ChangeinPercent}} </b></td>
@@ -31,7 +31,7 @@
 
   <script id="detailed-data-template" type="text/x-handlebars-template">
     {{#if Name}}
-      <h3 class="symbol">{{Name}} ({{symbol}}) </h3>
+      <h3 class="symbol" id="{{symbol}}"> {{Name}} ({{symbol}}) </h3>
       <h4>${{LastTradePriceOnly}} <b class="{{movement}}"> {{Change}} </b> <b class="{{movement}}">  {{ChangeinPercent}}</b></h4>
     {{else}}
       <h3 class="symbol"> Unknown Stock. Please check the symbol again.</h3>
@@ -74,6 +74,7 @@
         <td id="main-table-last" class="specific-data">{{PercentChangeFromYearLow}}</td>
       </tr>
     </table>
+    <p class="to-the-top"> To Top of Page </p>
   </script>
 
   <script id="stock-data-table-template" type="text/x-handlebars-template">
@@ -104,9 +105,9 @@
 
     <aside class="blur">
       <a href="/input">Edit </a>
-      <table>
+      <table id="testing">
         <tr>
-          <th id="aside-symbol">Symbol</th>
+          <th class="aside-symbol">Symbol</th>
           <th class="aside-price">Cur. Price</th>
           <th>Change</th>
           <th id="aside-mobile">Percent</th>
