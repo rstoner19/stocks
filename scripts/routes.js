@@ -8,4 +8,8 @@ Stocks.loadLocal(),
 Stocks.toInputPage()
 );
 
+page('/single',
+singleController.index
+);
+
 page();

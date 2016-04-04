@@ -98,7 +98,12 @@
             </ul>
           </li>
         </div> |
-          <li> Quick Quote (to come)</li>
+          <li>
+            <form id="single-symbol">
+              <input type="text" class="single-symbol-input" value="Enter Symbol">
+              <button type="submit"><a href="/single">Quick Look</a></button>
+            </form>
+          </li>
         </ul>
       </nav>
     </header>
@@ -138,6 +143,9 @@
         </ul>
       </section>
 
+      <section id="single-stock">
+      </section>
+
     </main>
 
 
@@ -148,8 +156,10 @@
 
     <script src="scripts/stocks.js"></script>
     <script src="scripts/symbolInput.js"></script>
+    <script src="scripts/singleStock.js"></script>
     <script src="scripts/indexController.js"></script>
     <script src="scripts/inputController.js"></script>
+    <script src="scripts/singleController.js"></script>
     <script src="scripts/routes.js"></script>
   </body>
 </html>

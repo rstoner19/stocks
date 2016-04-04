@@ -1,6 +1,6 @@
 /*** Nav Bar ***/
 .navbar {
-  background-color: rgb(72, 158, 59);
+  background-color: rgb(72, 120, 70);
 }
 
 .navbar ul {
@@ -17,6 +17,7 @@
 
 #sort-dropdown ul {
   display: none;
+  padding-top: 4px;
   position: absolute;
   height: auto;
   background-color: gray;
@@ -33,6 +34,11 @@
 
 #sort-dropdown li:hover {
   color: darkgray;
+}
+
+#single-symbol input {
+  border-radius: 5px;
+  width: 75px;
 }
 
 /*** Detailed Data Items ***/
@@ -154,6 +160,12 @@ aside a {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/*** Single Stock Input ***/
+#single-symbol a:link, a:visited, a:hover {
+  text-decoration: none;
+  color: black;
 }
 
 /*** Responsive ***/
