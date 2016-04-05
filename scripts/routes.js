@@ -9,7 +9,8 @@ Stocks.toInputPage()
 );
 
 page('/single',
-singleController.index
+singleController.index,
+Stocks.Single()
 );
 
 page();

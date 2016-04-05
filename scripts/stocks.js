@@ -23,10 +23,13 @@
         });
   };
 
-  Stocks.loadQuote = function(fn){
-    Stocks.list = Stocks.userList.join(',');
+  Stocks.loadQuote = function(fn, single){
+    if (!single){
+      Stocks.list = Stocks.userList.join(',');
+      var single = Stocks.list;
+    }
     console.log('loadQuote running');
-    Stocks.loadData(Stocks.list).done(function(){
+    Stocks.loadData(single).done(function(){
       Stocks.data = stockData[0].map(function(ele){
         return new Stocks(ele);
       });
