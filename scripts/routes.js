@@ -8,9 +8,4 @@ Stocks.loadLocal(),
 Stocks.toInputPage()
 );
 
-page('/single',
-singleController.index,
-Stocks.Single()
-);
-
 page();

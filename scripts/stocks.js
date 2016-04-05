@@ -2,11 +2,13 @@
   'use strict';
   var stockData = [];
   Stocks.data = [];
+  var doneWithRender;
 
   function Stocks (ops){
     Object.keys(ops).forEach(function(e,index,keys){
       this[e] = ops[e];
     },this);
+    doneWithRender = true;
   }
 
   Stocks.loadData = function(symbol) {
@@ -23,13 +25,10 @@
         });
   };
 
-  Stocks.loadQuote = function(fn, single){
-    if (!single){
-      Stocks.list = Stocks.userList.join(',');
-      var single = Stocks.list;
-    }
+  Stocks.loadQuote = function(fn){
+    Stocks.list = Stocks.userList.join(',');
     console.log('loadQuote running');
-    Stocks.loadData(single).done(function(){
+    Stocks.loadData(Stocks.list).done(function(){
       Stocks.data = stockData[0].map(function(ele){
         return new Stocks(ele);
       });
@@ -103,6 +102,47 @@
   $('.sort-options').on('click',function(){
     Stocks.sortBy(this.id);
   });
+
+  Stocks.SingleSymbol = false;
+  Stocks.singledata =[];
+
+  $('.single-symbol-input').on('click', function(e){
+    $('.single-symbol-input').val('');
+  });
+
+  $('#single-symbol').on('submit', function(e){
+    e.preventDefault();
+    $('.blur').css('-webkit-filter', 'blur(5px)');
+    $('#single-stock').fadeIn(650);
+    Stocks.SingleSymbol = $('.single-symbol-input').val().toUpperCase();
+    Stocks.Single(Stocks.toSinglePage);
+    $('.single-symbol-input').val('Enter Symbol');
+  });
+
+  Stocks.toSinglePage = function(){
+    $('#single-stock').append('<img id="close-single-page" src="img/close.png">');
+    Stocks.singledata.forEach(function(a){
+      $('#single-stock').append(a.toHtml('#detailed-data-template'));
+    });
+    Stocks.closeSingle();
+  };
+
+  Stocks.closeSingle = function(){
+    $('#close-single-page').on('click', function(){
+      $('#single-stock').hide().empty();
+      $('.blur').css('-webkit-filter', 'blur(0px)');
+    });
+  };
+
+
+  Stocks.Single = function(fn) {
+    Stocks.loadData(Stocks.SingleSymbol).done(function(){
+      Stocks.singledata = stockData.map(function(ele){
+        return new Stocks(ele);
+      });
+      fn();
+    });
+  };
 
 
   module.Stocks = Stocks;

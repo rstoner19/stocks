@@ -168,6 +168,31 @@ aside a {
   color: black;
 }
 
+#single-stock .to-the-top {
+  display: none;
+}
+
+#close-single-page {
+  width: 15px;
+  float: right;
+  margin-top: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+#single-stock {
+  display: none;
+  position: fixed;
+  border: solid black 1px;
+  border-radius: 10px;
+  width: 80%;
+  padding-left: 40px;
+  padding-bottom: 10px;
+  margin-top: 50px;
+  margin-left: 10%;
+  background: white;
+}
+
 /*** Responsive ***/
 @media only screen and (max-width: 1000px) {
   #main-table th {

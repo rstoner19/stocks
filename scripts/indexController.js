@@ -4,6 +4,7 @@
 
   controller.homepage = function() {
     $('#symbol-input').hide();
+    $('#single-stock').hide().empty();
     $('.blur').css('-webkit-filter', 'blur(0px)');
     $('#stock-data').empty();
     $('#detailed-data').empty();
