@@ -38,7 +38,7 @@
     {{/if}}
     <table id="main-table">
       <tr>
-        <th> Details </th>
+        <th> Details: </th>
         <td class="data-description"> Mkt. Cap</td>
         <td class="specific-data">${{MarketCapitalization}}</td>
         <td class="data-description">Last Trade </td>
@@ -98,10 +98,19 @@
             </ul>
           </li>
         </div> |
-          <li> Quick Quote (to come)</li>
+          <li>
+            <form id="single-symbol">
+              <input type="text" class="single-symbol-input" value="Enter Symbol">
+              <button type="submit">Quick Look</button>
+            </form>
+          </li>
         </ul>
       </nav>
     </header>
+
+    <section id="single-stock">
+      <a href="/"><img id="close-page" src="img/close.png"></a>
+    </section>
 
     <aside class="blur">
       <a href="/input">Edit </a>

@@ -28,6 +28,11 @@ main {
   z-index: -1;
 }
 
+nav {
+  height: 23px;
+  color: white;
+}
+
 /*** Responsive ***/
 @media only screen and (max-width: 685px) {
   aside {
