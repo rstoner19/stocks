@@ -113,10 +113,12 @@
   $('#single-symbol').on('submit', function(e){
     e.preventDefault();
     $('.blur').css('-webkit-filter', 'blur(5px)');
+    $('#single-symbol').css('-webkit-filter', 'blur(0px)');
     $('#single-stock').fadeIn(650);
     Stocks.SingleSymbol = $('.single-symbol-input').val().toUpperCase();
     Stocks.Single(Stocks.toSinglePage);
     $('.single-symbol-input').val('Enter Symbol');
+    $('#single-symbol-input').autocomplete('close');
   });
 
   Stocks.toSinglePage = function(){

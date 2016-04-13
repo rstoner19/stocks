@@ -48,6 +48,11 @@
   border-right: groove rgb(0, 0, 0) 1px;
 }
 
+#port-link {
+  color: white;
+  text-decoration: none;
+}
+
 /*** Detailed Data Items ***/
 .up {
   background-color: #CCFFCC;
