@@ -87,6 +87,7 @@
 }
 
 .to-the-top {
+  cursor: pointer;
   font-style: italic;
   font-size: .75em;
   margin-top: 3px;
