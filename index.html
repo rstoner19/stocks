@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="styles/base.css" media="screen" title="no title" charset="utf-8">
   <link rel="stylesheet" href="styles/layout.css" media="screen" title="no title" charset="utf-8">
   <link rel="stylesheet" href="styles/modules.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
   <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 
   <script id="stock-data-template" type="text/x-handlebars-template">
@@ -86,7 +87,7 @@
       <img src="img/logo.png">
       <nav class="navbar">
         <ul>
-          <li>Links </li>
+          <li><a id="port-link" href="/input">Portfolio </a></li>
           <li class="nav-options"> </li>
           <div>
           <li id="sort-dropdown"> Sort By
@@ -102,7 +103,8 @@
         <li class="nav-options"> </li>
           <li>
             <form id="single-symbol">
-              <input type="text" class="single-symbol-input" value="Enter Symbol">
+              <label for="single-symbol-input"></label>
+              <input type="text" id="single-symbol-input" class="single-symbol-input" value="Enter Symbol">
               <button type="submit">Quick Look</button>
             </form>
           </li>
@@ -141,8 +143,9 @@
 
       <section id="symbol-input">
         <a href="/"><img id="close-page" src="img/close.png"></a>
+        <label for="prefillSymbol"></label>
         <form id="new-symbol">
-          <input type="text" class="symbol-input" value="Enter Symbol">
+          <input type="text" id="prefillSymbol" class="symbol-input" value="Enter Symbol">
           <button type="submit">Add Stock</button>
         </form>
         <ul id="symbol-list">
@@ -155,10 +158,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/page.js/1.6.4/page.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
-    <script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <!-- <script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script> -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-76498441-1', 'auto');
+      ga('send', 'pageview');
+    </script>
 
     <script src="scripts/stocks.js"></script>
     <script src="scripts/symbolInput.js"></script>
+    <script src="scripts/autoSymbol.js"></script>
     <script src="scripts/indexController.js"></script>
     <script src="scripts/inputController.js"></script>
     <script src="scripts/routes.js"></script>

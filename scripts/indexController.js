@@ -11,6 +11,7 @@
     $('#stock-data').show();
     Stocks.loadLocal(),
     Stocks.loadQuote(Stocks.toIndexPage);
+    AutoComplete.loadSymbol();
   };
 
   module.controller = controller;
