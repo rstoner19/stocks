@@ -51,7 +51,6 @@
 
   $('.symbol-input').on('click', function(e){
     $('.symbol-input').val('');
-    $('##prefillSymbol').autocomplete('close');
   });
 
   module.Stocks = Stocks;
