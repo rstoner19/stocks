@@ -88,6 +88,8 @@
           b.temp = 100000;
         } else {b.temp = parseFloat(b.PERatio);}
         return (a.temp - b.temp);
+      } else if (sortBy === 'percent-low'){
+        return (Math.abs(parseFloat(a.PercentChangeFromYearLow)) - Math.abs(parseFloat(b.PercentChangeFromYearLow)));
       } else {
         if (a.symbol < b.symbol){
           return -1;
