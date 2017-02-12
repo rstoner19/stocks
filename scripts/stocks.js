@@ -15,7 +15,7 @@
     stockData = [];
     var url = 'https://query.yahooapis.com/v1/public/yql';
     var data = encodeURIComponent('select * from yahoo.finance.quotes where symbol in ("' + symbol + '")');
-    return $.getJSON(url, 'q=' + data + '&format=json&diagnostics=true&env=http://datatables.org/alltables.env')
+    return $.getJSON(url, 'q=' + data + '&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=')
       .done(function (data) {
         stockData.push(data.query.results.quote);
       })
